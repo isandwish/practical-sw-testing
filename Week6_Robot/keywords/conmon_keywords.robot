@@ -11,16 +11,16 @@ Open Web Browser
 Scroll Down To Bottom
     Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
 
-Input Firstname
+Input Valid Firstname
     Input text     //*[@id='input_comp-lt33fcq41']     ${FIRSTNAME}
 
-Input Lastname
+Input Valid Lastname
     Input text     //*[@id="input_comp-lt33fcs1"]     ${LASTNAME}
 
-Input Phone Number
+Input Valid Phone Number
     Input text     //*[@id='input_comp-lt33fcsi1']     ${PHONE_NUMBER}
 
-Input Email Address
+Input Valid Email Address
     Input text     //*[@id='input_comp-lt33fcsf1']     ${EMAIL_ADDRESS}
 
 Select Number of Adults
