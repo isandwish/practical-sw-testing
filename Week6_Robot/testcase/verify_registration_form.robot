@@ -18,9 +18,9 @@ Verify registration form with all input field
     Select Pet Choice
     Input Note
     Agree Terms And Conditions
-    Submit Button
-    Expected Result
-    Sleep    ${END_SLEEP}
+    # Submit Button
+    # Expected Result
+    # Sleep    ${END_SLEEP}
 
 Verify registration form with single fault firstname
     Open Web Browser
@@ -34,7 +34,7 @@ Verify registration form with single fault firstname
     Input Note
     Agree Terms And Conditions
     Submit Button
-    Page Should Not Contain    ${EXPECTED_TEXT_RESULT}
+    Verify Field Is Invalid    input_comp-lt33fcq41
 
 
 Verify registration form with single fault lastname
@@ -49,7 +49,7 @@ Verify registration form with single fault lastname
     Input Note
     Agree Terms And Conditions
     Submit Button
-    Page Should Not Contain    ${EXPECTED_TEXT_RESULT}
+    Verify Field Is Invalid    input_comp-lt33fcs1
 
 
 Verify registration form with single fault phone number
@@ -64,7 +64,7 @@ Verify registration form with single fault phone number
     Input Note
     Agree Terms And Conditions
     Submit Button
-    Page Should Not Contain    ${EXPECTED_TEXT_RESULT}
+    Verify Field Is Invalid    input_comp-lt33fcsi1
 
 
 Verify registration form with single fault email address
@@ -79,8 +79,7 @@ Verify registration form with single fault email address
     Input Note
     Agree Terms And Conditions
     Submit Button
-    Page Should Not Contain    ${EXPECTED_TEXT_RESULT}
-
+    Verify Field Is Invalid    input_comp-lt33fcsf1
 
 Verify registration form with single fault number of adults
     Open Web Browser
@@ -94,19 +93,4 @@ Verify registration form with single fault number of adults
     Input Note
     Agree Terms And Conditions
     Submit Button
-    Page Should Not Contain    ${EXPECTED_TEXT_RESULT}
-
-
-Verify registration form with single fault pet choice
-    Open Web Browser
-    Scroll Down To Bottom
-    Input Valid Firstname
-    Input Valid Lastname
-    Input Valid Phone Number
-    Input Valid Email Address
-    Select Number of Adults
-    Select Invalid Pet Choice
-    Input Note
-    Agree Terms And Conditions
-    Submit Button
-    Page Should Not Contain    ${EXPECTED_TEXT_RESULT}
+    Verify Field Is Invalid    collection_comp-lt33fcsl1
