@@ -42,3 +42,9 @@ Submit Button
 Expected Result
     Wait Until Element Is Visible    //*[@id="comp-ltvkcimc"]/p/span/span    ${EXPECTED_TEXT_RESULT_SLEEP}
     Element Should Contain    //*[@id="comp-ltvkcimc"]/p/span/span    ${EXPECTED_TEXT_RESULT}
+
+Verify Text Field Value
+    [Arguments]    ${field_id}    ${expected_value}
+    # Check that the input field contains the expected value
+
+    Textfield Value Should Be    id=${field_id}    ${expected_value}
