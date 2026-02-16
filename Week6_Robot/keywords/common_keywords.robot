@@ -1,6 +1,5 @@
-${OPEN_BROWSER_SLEEP}    ${2}
-${END_SLEEP}    ${10}
-${EXPECTED_TEXT_RESULT_SLEEP}     ${10}
+*** Settings ***
+Resource    ../testdata/common_test_data.robot
 
 *** Keywords ***
 Open Web Browser
@@ -41,5 +40,5 @@ Submit Button
     Click Element    xpath=//*[text()='Submit']
 
 Expected Result
-    Wait Until Element Is Visible    //*[@id=comp-ltvkcimc]    ${EXPECTED_TEXT_RESULT_SLEEP}
-    Element Should Contain    //*[@id=comp-ltvkcimc]    ${EXPECTED_TEXT_RESULT}
+    Wait Until Element Is Visible    //*[@id="comp-ltvkcimc"]/p/span/span    ${EXPECTED_TEXT_RESULT_SLEEP}
+    Element Should Contain    //*[@id="comp-ltvkcimc"]/p/span/span    ${EXPECTED_TEXT_RESULT}
