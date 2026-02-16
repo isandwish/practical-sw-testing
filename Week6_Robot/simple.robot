@@ -55,8 +55,8 @@ Submit Button
     Click Element    xpath=//*[text()='Submit']
 
 Expected Result
-    Wait Until Element Is Visible    //*[@id=comp-ltvkcimc]    ${EXPECTED_TEXT_RESULT_SLEEP}
-    Element Should Contain    //*[@id=comp-ltvkcimc]    ${EXPECTED_TEXT_RESULT}
+    Wait Until Element Is Visible    //*[@id="comp-ltvkcimc"]/p/span/span    ${EXPECTED_TEXT_RESULT_SLEEP}
+    Element Should Contain    //*[@id="comp-ltvkcimc"]/p/span/span    ${EXPECTED_TEXT_RESULT}
 
 *** Test Cases ***
 Verify registration form with all input field\
