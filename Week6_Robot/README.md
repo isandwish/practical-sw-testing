@@ -28,7 +28,7 @@ Single Fault tests verify that the system correctly validates required fields.
 ---
 
 ## Project Structure
-
+```
 Week6_Robot
 │
 ├── keywords
@@ -46,7 +46,7 @@ Week6_Robot
 │
 └── simple.robot
 
-
+```
 ---
 
 ## Folder Description
