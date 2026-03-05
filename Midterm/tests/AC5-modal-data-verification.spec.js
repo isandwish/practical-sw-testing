@@ -139,3 +139,29 @@ test("AC5.3 - Close button should close modal and return to form", async ({ page
     // Form should be visible again
     await expect(page.locator("#userForm")).toBeVisible();
 });
+
+test("AC5.4 - Clicking outside modal should close it", async ({ page }) => {
+  await page.goto("https://demoqa.com/automation-practice-form");
+
+  // Fill minimum required fields
+  await page.getByPlaceholder("First Name").fill("Natthanicha");
+  await page.getByPlaceholder("Last Name").fill("Jamjuree");
+  await page.getByLabel("Female").click();
+  await page.getByPlaceholder("Mobile Number").fill("0812345678");
+
+  await page.locator("#submit").click();
+
+  const modal = page.locator(".modal-content");
+
+  // Ensure modal appears
+  await expect(modal).toBeVisible();
+
+  // Click overlay (outside modal content)
+  await page.locator(".modal").click({ position: { x: 5, y: 5 } });
+
+  // Modal should disappear
+  await expect(modal).not.toBeVisible();
+
+  // Back to form
+  await expect(page.locator("#userForm")).toBeVisible();
+});
