@@ -87,3 +87,55 @@ test("AC5.2 - Optional fields should be empty when not provided", async ({ page 
     await expect(modal.getByRole("row", { name: "State and City" }))
         .toContainText("");
 });
+
+test("AC5.3 - Close button should close modal and return to form", async ({ page }) => {
+    await page.goto("https://demoqa.com/automation-practice-form");
+
+    // Fill minimum required fields
+    await page.getByPlaceholder("First Name").fill("Natthanicha");
+    await page.getByPlaceholder("Last Name").fill("Jamjuree");
+    await page.getByLabel("Female").click();
+    await page.getByPlaceholder("Mobile Number").fill("0812345678");
+
+    await page.locator("#submit").click();
+
+    const modal = page.locator(".modal-content");
+
+    // Ensure modal appears
+    await expect(modal).toBeVisible();
+
+    // Click Close button
+    await page.getByRole("button", { name: "Close" }).click();
+
+    // Modal should disappear
+    await expect(modal).not.toBeVisible();
+
+    // Form should be visible again
+    await expect(page.locator("#userForm")).toBeVisible();
+});
+
+test("AC5.3 - Close button should close modal and return to form", async ({ page }) => {
+    await page.goto("https://demoqa.com/automation-practice-form");
+
+    // Fill minimum required fields
+    await page.getByPlaceholder("First Name").fill("Natthanicha");
+    await page.getByPlaceholder("Last Name").fill("Jamjuree");
+    await page.getByLabel("Female").click();
+    await page.getByPlaceholder("Mobile Number").fill("0812345678");
+
+    await page.locator("#submit").click();
+
+    const modal = page.locator(".modal-content");
+
+    // Ensure modal appears
+    await expect(modal).toBeVisible();
+
+    // Click Close button
+    await page.getByRole("button", { name: "Close" }).click();
+
+    // Modal should disappear
+    await expect(modal).not.toBeVisible();
+
+    // Form should be visible again
+    await expect(page.locator("#userForm")).toBeVisible();
+});
